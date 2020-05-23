@@ -23,4 +23,5 @@ noFill();
 for(var i = 0; i< drawing.length; i++){
     vertex(drawing[i].x,drawing[i].y)
 }
+endShape();
 }
