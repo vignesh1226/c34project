@@ -1,19 +1,26 @@
-var arr = [];
+var drawing = [];
+
 function setup(){
-    createCanvas(500,500);
+ createCanvas(600,600);
+    
 }
 
 function draw(){
-    background("white");
-
+ background(0);
+    
+if(mouseIsPressed){
+   var point = {
+    x:mouseX,
+    y:mouseY
+   }
+   drawing.push(point);
 }
-function mouseDragged(){
-    arr = [mouseX,mouseY];
 
-    for(var i = 0;i < arr.length;i++){
-        line(arr[0],arr[1],1,1)
-    }
+beginShape()
+stroke(255);
+strokeWeight(3);
+noFill();    
+for(var i = 0; i< drawing.length; i++){
+    vertex(drawing[i].x,drawing[i].y)
 }
-function mouseReleased(){
-
 }
